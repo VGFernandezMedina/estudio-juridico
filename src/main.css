@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* Colores Base */
+:root {
+  --color-primario: #006a92;
+  --color-secundario: #f39423;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+
+  /* Colores Srimarios */
+  --primario-10: #005f83;
+  --primario-20: #005575;
+  --primario-30: #004a66;
+  --primario-40: #004058;
+  --primario-50: #003549;
+  --primario-60: #002a3a;
+  --primario-70: #00202c;
+  --primario-80: #00151d;
+  --primario-90: #000b0f;
+
+  /* Colores Secundarios */
+  --secundario-10: #f49f39;
+  --secundario-20: #f5a94f;
+  --secundario-30: #f7b465;
+  --secundario-40: #f8bf7b;
+  --secundario-50: #f9c491;
+  --secundario-60: #fad4a7;
+  --secundario-70: #fbdfbd;
+  --secundario-80: #fdead3;
+  --secundario-90: #fef4e9;
+}

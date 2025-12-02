@@ -4,8 +4,19 @@
 :root {
   --color-primario: #006a92;
   --color-secundario: #f39423;
-  --color-blanco: #ffffff;
-  --color-negro: #000000;
+
+  /* Blanco y Negro */
+  --gray-900: #000000;
+  --gray-800: #1a1a1a;
+  --gray-700: #333333;
+  --gray-600: #4d4d4d;
+  --gray-500: #666666;
+  --gray-400: #808080;
+  --gray-300: #999999;
+  --gray-200: #b3b3b3;
+  --gray-150: #cccccc;
+  --gray-100: #e6e6e6;
+  --gray-50: #ffffff;
 
   /* Colores Srimarios */
   --primario-10: #005f83;
@@ -29,3 +40,21 @@
   --secundario-80: #fdead3;
   --secundario-90: #fef4e9;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* .fuente {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  font-style: normal;
+} */

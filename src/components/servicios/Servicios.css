@@ -1,0 +1,9 @@
+.servicios {
+  height: 100vh;
+  width: auto;
+  background-color: var(--color-primario);
+}
+
+.row-servicios {
+  margin: 0 10%;
+}

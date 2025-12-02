@@ -1,14 +1,14 @@
 .navbar {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
-  height: 10vh;
+  height: 12vh;
 }
 
 .logo-nav {
-  max-height: 80px;
-  height: auto;
+  max-height: 60px;
   width: auto;
   padding-left: 40px;
+  object-fit: cover;
 }
 
 .nav-center {
@@ -51,7 +51,7 @@
   bottom: 0;
   height: 3px;
   width: 0%;
-  background-color: var(--primario-10);
+  background-color: var(--color-primario);
   transition: width 0.5s ease;
 }
 

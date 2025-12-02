@@ -6,10 +6,10 @@ import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
 const NavbarC = () => {
   return (
     <Navbar expand="lg" className="navbar">
-      <Container fluid>
-        <Navbar.Brand href="#">
+      <Container>
+        <Nav.Link href="#">
           <img className="logo-nav" src={logo} alt="logo" />
-        </Navbar.Brand>
+        </Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="position-absolute start-50 translate-middle-x nav-center">

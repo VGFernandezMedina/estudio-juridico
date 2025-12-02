@@ -1,0 +1,47 @@
+.inicio {
+  width: 100%;
+  height: 80vh;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20vh;
+}
+
+.inicio div {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor {
+  gap: 30px;
+}
+
+.titulos {
+  gap: 5px;
+  h3 {
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--gray-100);
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 55px;
+  }
+}
+
+.btn-inicio {
+  width: 180px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent !important;
+  border: 1px solid var(--gray-50) !important;
+}
+
+.btn-inicio:hover {
+  background-color: var(--primario-10) !important;
+  border: 1px solid var(--gray-50) !important;
+}

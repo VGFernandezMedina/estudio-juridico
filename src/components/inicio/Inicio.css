@@ -1,11 +1,13 @@
 .inicio {
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20vh;
+  padding-bottom: 10vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
 }
 
 .inicio div {
@@ -28,6 +30,8 @@
   h1 {
     font-weight: 700;
     font-size: 55px;
+    color: var(--gray-50);
+    letter-spacing: 2px;
   }
 }
 

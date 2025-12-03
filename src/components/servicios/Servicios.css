@@ -1,0 +1,41 @@
+.servicios {
+  background-color: var(--color-primario);
+  color: var(--gray-50);
+  font-family: "Inter", sans-serif;
+  h2 {
+    font-size: 36px;
+  }
+}
+
+.card-servicios {
+  border: none !important;
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+.card-servicios:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-5px);
+}
+
+.row-servicios {
+  padding: 0 15%;
+}
+
+.title-card {
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  color: var(--gray-50) !important;
+}
+
+.description-card {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--gray-50);
+}
+
+.body-card {
+  background-color: var(--primario-40);
+  padding: 20px !important;
+}

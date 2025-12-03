@@ -8,7 +8,7 @@ const Servicios = () => {
   return (
     <Container
       fluid
-      className="servicios d-flex align-items-center flex-column justify-content-center"
+      className="servicios d-flex align-items-center flex-column justify-content-center py-5"
     >
       <h2 className="pb-4">Servicios</h2>
       <Row className="row-servicios">

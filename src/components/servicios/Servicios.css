@@ -2,6 +2,10 @@
   background-color: var(--color-primario);
   color: var(--gray-50);
   font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   h2 {
     font-size: 36px;
   }

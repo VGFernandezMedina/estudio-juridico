@@ -8,6 +8,7 @@
   h2 {
     text-align: center;
     color: white;
+    font-family: "PT Serif", serif;
   }
 }
 
@@ -24,7 +25,7 @@
   display: flex;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--primario-40);
   color: white;
 }
@@ -49,6 +50,7 @@
   strong {
     font-size: 20px;
     color: var(--color-secundario);
+    font-family: "PT Serif", serif;
   }
 }
 
@@ -56,6 +58,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  h3 {
+    text-align: center;
+    color: white;
+    font-family: "PT Serif", serif;
+  }
 }
 
 .form-contacto {
@@ -65,12 +72,27 @@
   width: 70%;
   height: 90%;
   background-color: var(--primario-40);
-  border-radius: 10px;
+  border-radius: 5px;
   form {
     width: 90%;
   }
 }
 
 .form-label {
-  color: var(--color-secundario);
+  color: white;
+  font-size: 16px;
+}
+
+.form-control {
+  font-size: 14px !important;
+}
+
+.form {
+  button {
+    background-color: #1a799d;
+    border: none;
+  }
+  button:hover {
+    background-color: var(--color-primario);
+  }
 }

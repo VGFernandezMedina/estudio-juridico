@@ -1,4 +1,4 @@
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "./Contacto.css";
 import {
   FaFacebookF,
@@ -56,20 +56,30 @@ const Contacto = () => {
         </Col>
         <Col sm="12" md="7" lg="7" className="col-formulario g-0">
           <div className="form-contacto">
-            <Form>
+            <Form className="form">
+              <h3 className="pb-4">Formulario de contacto</h3>
               <Form.Group className="mb-3" controlId="formNombre">
                 <Form.Label className="form-label">Nombre</Form.Label>
-                <Form.Control type="text" placeholder="Tu nombre" />
+                <Form.Control
+                  className="form-control"
+                  type="text"
+                  placeholder="Tu nombre"
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formTelefono">
                 <Form.Label className="form-label">Teléfono</Form.Label>
-                <Form.Control type="tel" placeholder="Ej: +54 9 381..." />
+                <Form.Control
+                  className="form-control"
+                  type="tel"
+                  placeholder="Ej: +54 9 381..."
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formEmail">
                 <Form.Label className="form-label">Correo</Form.Label>
                 <Form.Control
+                  className="form-control"
                   type="email"
                   placeholder="tucorreo@mail.com.com"
                 />
@@ -77,8 +87,9 @@ const Contacto = () => {
 
               <Form.Group className="mb-3" controlId="formTexto">
                 <Form.Label className="form-label">Mensaje</Form.Label>
-                <Form.Control as="textarea" rows={3} />
+                <Form.Control className="form-control" as="textarea" rows={3} />
               </Form.Group>
+              <Button variant="primary">Enviar mensaje</Button>
             </Form>
           </div>
         </Col>

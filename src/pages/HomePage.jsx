@@ -1,3 +1,4 @@
+import Contacto from "../components/contacto/Contacto";
 import Inicio from "../components/inicio/Inicio";
 import Servicios from "../components/servicios/Servicios";
 import "./HomePage.css";
@@ -9,6 +10,7 @@ const HomePage = () => {
       <Container fluid className="home g-0">
         <Inicio />
         <Servicios />
+        <Contacto />
       </Container>
     </>
   );

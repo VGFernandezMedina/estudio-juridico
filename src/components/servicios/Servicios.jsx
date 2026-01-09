@@ -6,11 +6,8 @@ import CivilComercial from "/img-civil-comercial.jpg";
 
 const Servicios = () => {
   return (
-    <Container
-      fluid
-      className="servicios d-flex align-items-center flex-column justify-content-center py-5"
-    >
-      <h2 className="pb-4">Servicios</h2>
+    <Container fluid className="servicios pb-5">
+      <h2 className="py-3">Servicios</h2>
       <Row className="row-servicios">
         <Col sm="12" md="4" lg="4">
           <Card className="h-100 card-servicios rounded-3">

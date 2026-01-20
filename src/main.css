@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 /* Colores Base */
 :root {
   --color-primario: #006a92;
   --color-secundario: #f39423;
+
+  --color-1: rgb(2, 227, 227);
+  --color-2: rgb(246, 180, 0);
+  --color-3: rgb(91, 218, 1);
 
   /* Blanco y Negro */
   --gray-900: #000000;
@@ -53,7 +59,8 @@ body {
 }
 
 /* .fuente {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;   MODERNO
+  font-family: "PT Serif", serif;    FORMAL
   font-weight: 100;
   font-size: 18px;
   font-style: normal;

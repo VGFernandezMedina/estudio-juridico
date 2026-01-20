@@ -1,0 +1,31 @@
+.servicios {
+  background-color: var(--primario-60);
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.encabezado {
+  color: var(--gray-50);
+  text-align: center;
+  max-width: 800px;
+  div {
+    gap: 5px;
+  }
+  h2 {
+    font-size: 48px;
+    font-family: "PT Serif", serif;
+    margin-bottom: 14px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.762);
+  }
+}
+
+.row-servicios {
+  padding: 0 10%;
+}

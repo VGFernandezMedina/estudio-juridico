@@ -1,0 +1,98 @@
+.contacto {
+  height: 100vh;
+  width: auto;
+  background-color: var(--primario-80);
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    text-align: center;
+    color: white;
+    font-family: "PT Serif", serif;
+  }
+}
+
+.col-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item-contacto {
+  width: 80%;
+  height: 100px;
+  display: flex;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: var(--primario-40);
+  color: white;
+}
+
+.icono-contacto {
+  height: 100%;
+  aspect-ratio: 1 / 1; /* hace que el width sea igual al height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--primario-20);
+}
+
+.datos-contacto {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  p {
+    font-size: 16px;
+  }
+  strong {
+    font-size: 20px;
+    color: var(--color-secundario);
+    font-family: "PT Serif", serif;
+  }
+}
+
+.col-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    text-align: center;
+    color: white;
+    font-family: "PT Serif", serif;
+  }
+}
+
+.form-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 90%;
+  background-color: var(--primario-40);
+  border-radius: 5px;
+  form {
+    width: 90%;
+  }
+}
+
+.form-label {
+  color: white;
+  font-size: 16px;
+}
+
+.form-control {
+  font-size: 14px !important;
+}
+
+.form {
+  button {
+    background-color: #1a799d;
+    border: none;
+  }
+  button:hover {
+    background-color: var(--color-primario);
+  }
+}

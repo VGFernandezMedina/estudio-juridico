@@ -2,25 +2,43 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
   height: 12vh;
+  border-bottom: 1px solid var(--gray-600);
+  z-index: 1;
+}
+
+.custom-toggler-icon {
+  font-size: 28px;
+  color: var(--color-primario);
+  border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.nav-toggle:focus,
+.nav-toggle:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .logo-nav {
-  max-height: 60px;
+  max-height: 80px;
   width: auto;
-  padding-left: 40px;
+  padding-left: 60px;
   object-fit: cover;
 }
 
-.nav-center {
-  /* border: 1px solid white; */
+/* .nav-center {
   gap: 20px;
   height: 100%;
-}
+  padding-left: 10px;
+} */
 
 .nav-right {
   margin-left: auto;
   height: 100%;
-  padding-right: 40px;
+  padding-right: 60px;
+  display: flex;
+  gap: 40px;
 }
 
 .nav-right .nav-link {
@@ -28,11 +46,17 @@
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 18px;
+  letter-spacing: 2px;
+  transition: color 0.5s ease;
 }
 
-.nav-center .nav-link {
+.nav-right .nav-link:hover {
+  color: var(--gray-150) !important;
+}
+
+/* .nav-center .nav-link {
   color: var(--gray-50);
-  font-family: "Inter", sans-serif;
+  font-family: "PT Serif", serif;
   font-weight: 300;
   font-size: 18px;
   letter-spacing: 2px;
@@ -44,9 +68,9 @@
 
 .nav-center .nav-link:hover {
   color: var(--gray-150) !important;
-}
+} */
 
-.nav-center .nav-link::after {
+/* .nav-center .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -59,9 +83,9 @@
 
 .nav-center .nav-link:hover::after {
   width: 100%;
-}
+} */
 
-.nav-icon {
+/* .nav-icon {
   display: flex;
   gap: 25px;
 }
@@ -73,4 +97,56 @@
 
 .nav-icon a:hover {
   color: var(--gray-150);
+} */
+
+@media (max-width: 425px) {
+  .logo-nav {
+    padding-left: 0px;
+  }
 }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  .nav-center {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding-left: 10px !important;
+  }
+  .nav-center .nav-link {
+    font-size: 15px;
+  }
+  .nav-right {
+    width: 100%;
+    padding-left: 10px !important;
+  }
+}
+
+/* @media (min-width: 992px) {
+  .navbar-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .nav-collapse {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .nav-center {
+    justify-self: center;
+    display: flex;
+    gap: 20px;
+    padding-left: 30px !important;
+  }
+
+  .nav-right {
+  }
+} */

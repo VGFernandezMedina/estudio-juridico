@@ -1,12 +1,12 @@
 import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import "./NavbarC.css";
 import logo from "/logo.png";
-import {
+/* import {
   FaFacebookF,
   FaInstagram,
   FaLinkedin,
   FaWhatsapp,
-} from "react-icons/fa";
+} from "react-icons/fa"; */
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const NavbarC = () => {

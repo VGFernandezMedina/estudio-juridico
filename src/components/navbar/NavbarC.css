@@ -35,8 +35,8 @@
   gap: 40px;
 }
 
-.nav-right .nav-link {
-  color: var(--gray-50);
+.navbar .nav-right .nav-link {
+  color: var(--gray-50) !important;
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -44,8 +44,15 @@
   transition: color 0.5s ease;
 }
 
-.nav-right .nav-link:hover {
+.navbar .nav-right .nav-link:hover {
   color: var(--gray-150) !important;
+}
+
+.navbar .nav-right .nav-link:active,
+.navbar .nav-right .nav-link:focus,
+.navbar .nav-right .nav-link:focus-visible,
+.navbar .nav-right .nav-link.active {
+  color: var(--gray-50);
 }
 
 /* .nav-center {

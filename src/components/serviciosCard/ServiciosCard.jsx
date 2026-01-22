@@ -2,14 +2,8 @@ import { Badge, Card, Col } from "react-bootstrap";
 import "./ServiciosCard.css";
 
 const ServiciosCard = ({ img, titulo, descripcion, etiqueta }) => {
-  const coloresPorEtiqueta = {
-    "Derechos de familia": "var(--color-1)",
-    "Derecho civil y comercial": "var(--color-2)",
-    "Derecho del trabajo": "var(--color-3)",
-  };
-
   return (
-    <Col sm="12" md="4" lg="3" className="pb-4">
+    <Col sm="12" md="6" lg="3" className="pb-4 col-servicios">
       <Card className="h-100 card-servicios rounded-2">
         <Card.Img className="img-card" variant="top" src={img} />
         <Card.Body className="body-card d-flex flex-column" src={img}>
@@ -17,9 +11,6 @@ const ServiciosCard = ({ img, titulo, descripcion, etiqueta }) => {
           <Card.Text className="description-card">{descripcion}</Card.Text>
           <Badge
             bg={null}
-            style={{
-              color: coloresPorEtiqueta[etiqueta] || "var(--bs-secondary)",
-            }}
             className="etiqueta-servicios mt-auto align-self-start"
           >
             {etiqueta}

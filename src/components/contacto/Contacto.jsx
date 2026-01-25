@@ -8,16 +8,25 @@ import {
 } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 import { IoIosTimer } from "react-icons/io";
+import { PiScales } from "react-icons/pi";
 
 const Contacto = () => {
   return (
-    <Container fluid className="contacto">
-      <h2 className="py-3">Contacto</h2>
-      <Row className="h-100">
-        <Col sm="12" md="5" lg="5" className="col-contacto">
+    <Container fluid className="contacto pb-5">
+      <section className="encabezado">
+        <div className="d-flex justify-content-center align-items-center mb-3">
+          <PiScales size={20} />
+          <span>Contacto</span>
+        </div>
+        <h2>Acompañamiento legal claro, humano y profesional.</h2>
+        <p>Defiendo tus derechos con compromiso, cercanía y responsabilidad.</p>
+      </section>
+
+      <Row className="row-contacto">
+        <Col sm="12" md="5" lg="5" className="col-contacto g-0">
           <div className="item-contacto">
             <div className="icono-contacto">
-              <FaWhatsapp size={30} />
+              <FaWhatsapp className="icon" />
             </div>
             <div className="datos-contacto ">
               <strong className="">WhatsApp:</strong>
@@ -26,7 +35,7 @@ const Contacto = () => {
           </div>
           <div className="item-contacto">
             <div className="icono-contacto">
-              <TfiEmail size={24} />
+              <TfiEmail className="icon" />
             </div>
             <div className="datos-contacto ">
               <strong className="">Email:</strong>
@@ -35,14 +44,14 @@ const Contacto = () => {
           </div>
           <div className="item-contacto">
             <div className="icono-contacto">
-              <IoIosTimer size={30} />
+              <IoIosTimer className="icon" />
             </div>
             <div className="datos-contacto ">
               <strong>Disponibilidad:</strong>
               <p>Lunes a Viernes: 8:00 a 12:00 y 16:00 a 21:00</p>
             </div>
           </div>
-          <div className="item-contacto bg-transparent d-flex justify-content-evenly">
+          {/*         <div className="item-contacto bg-transparent d-flex justify-content-evenly">
             <div className="icono-contacto">
               <FaFacebookF size={24} />
             </div>
@@ -52,11 +61,11 @@ const Contacto = () => {
             <div className="icono-contacto">
               <FaLinkedin size={24} />
             </div>
-          </div>
+          </div> */}
         </Col>
         <Col sm="12" md="7" lg="7" className="col-formulario g-0">
           <div className="form-contacto">
-            <Form className="form">
+            <Form className="form py-4">
               <h3 className="pb-4">Formulario de contacto</h3>
               <Form.Group className="mb-3" controlId="formNombre">
                 <Form.Label className="form-label">Nombre</Form.Label>
@@ -89,7 +98,9 @@ const Contacto = () => {
                 <Form.Label className="form-label">Mensaje</Form.Label>
                 <Form.Control className="form-control" as="textarea" rows={3} />
               </Form.Group>
-              <Button variant="primary">Enviar mensaje</Button>
+              <div className="d-flex justify-content-center">
+                <Button variant="primary">Enviar mensaje</Button>
+              </div>
             </Form>
           </div>
         </Col>

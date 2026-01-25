@@ -1,59 +1,50 @@
 const servicios = [
   {
-    id: 3,
-    img: "/img-civil-comercial.jpg",
-    titulo: "Derecho civil y comercial",
-    descripcion:
-      "Soluciones legales en contratos, deudas, propiedad, responsabilidad civil y asuntos comerciales para empresas y particulares.",
-    etiqueta: "Derecho civil y comercial",
-  },
-  {
     id: 1,
-    img: "/img-familias.jpg",
+    img: "/Sucesiones.jpg",
     titulo: "Sucesiones",
-    descripcion: "prueba",
+    descripcion:
+      "Asesoramiento y acompañamiento legal en procesos sucesorios, desde la apertura hasta la adjudicación de bienes a los herederos.",
     etiqueta: "Derechos de familia",
   },
   {
     id: 2,
-    img: "/img-familias.jpg",
+    img: "/Regimen-de-alimentos.jpg",
     titulo: "Régimen de alimentos",
-    descripcion: "prueba",
+    descripcion:
+      "Gestión y reclamo de cuotas alimentarias para asegurar el bienestar y las necesidades básicas de hijos y familiares.",
     etiqueta: "Derechos de familia",
   },
   {
     id: 3,
     img: "/img-familias.jpg",
     titulo: "Régimen comunicacional",
-    descripcion: "prueba",
+    descripcion:
+      "Asistencia legal para establecer y regular el contacto entre padres e hijos, priorizando el interés del niño.",
     etiqueta: "Derechos de familia",
   },
   {
     id: 4,
-    img: "/img-familias.jpg",
+    img: "/Despidos.jpg",
     titulo: "Despidos directos e indirectos",
-    descripcion: "prueba",
+    descripcion:
+      "Defensa y asesoramiento legal ante despidos injustificados, reclamos laborales e indemnizaciones correspondientes.",
     etiqueta: "Derecho del trabajo",
   },
   {
     id: 5,
-    img: "/img-trabajo.jpg",
-    titulo: "Despidos directos e indirectos",
-    descripcion: "prueba",
-    etiqueta: "Derecho del trabajo",
+    img: "/public/daño-y-prejuicio.jpg",
+    titulo: "Daño y prejuicio",
+    descripcion:
+      "Reclamos por daños sufridos, orientados a obtener una reparación económica justa y adecuada.",
+    etiqueta: "Derecho civil y comercial",
   },
   {
     id: 6,
     img: "/img-civil-comercial.jpg",
-    titulo: "Daño y prejuicio",
-    descripcion: "prueba",
-    etiqueta: "Derecho civil y comercial",
-  },
-  {
-    id: 7,
-    img: "/img-civil-comercial.jpg",
     titulo: "Prescripción adquisitiva",
-    descripcion: "prueba",
+    descripcion:
+      "Asesoramiento integral para regularizar la titularidad de bienes mediante la posesión prolongada conforme a la ley.",
     etiqueta: "Derecho civil y comercial",
   },
 ];

@@ -1,6 +1,6 @@
-import Contacto from "../components/contacto/Contacto";
 import Inicio from "../components/inicio/Inicio";
 import Servicios from "../components/servicios/Servicios";
+import Contacto from "../components/contacto/Contacto";
 import "./HomePage.css";
 import { Container } from "react-bootstrap";
 

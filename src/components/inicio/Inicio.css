@@ -10,17 +10,16 @@
   backdrop-filter: blur(2px);
 }
 
-.inicio div {
+.contenedor {
+  gap: 30px;
   width: 70%;
   display: flex;
   flex-direction: column;
 }
 
-.contenedor {
-  gap: 30px;
-}
-
 .titulos {
+  display: flex;
+  flex-direction: column;
   gap: 5px;
   h3 {
     font-weight: 400;
@@ -28,6 +27,7 @@
     color: var(--gray-100);
   }
   h1 {
+    font-family: "PT Serif", serif;
     font-weight: 700;
     font-size: 55px;
     color: var(--gray-50);
@@ -48,4 +48,51 @@
 .btn-inicio:hover {
   background-color: var(--primario-10) !important;
   border: 1px solid var(--gray-50) !important;
+}
+
+@media (max-width: 425px) {
+  .contenedor {
+    width: 90%;
+    display: flex;
+    align-items: center;
+  }
+  .titulos {
+    display: flex;
+    gap: 10px;
+    h3 {
+      font-weight: 300;
+      font-size: 18px;
+      text-align: center;
+    }
+    h1 {
+      font-weight: 400;
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+  .btn-inicio {
+    width: 120px;
+    gap: 5px;
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 992px) {
+  .contenedor {
+    width: 80%;
+  }
+  .titulos {
+    h3 {
+      font-weight: 400;
+      font-size: 20px;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 42px;
+    }
+  }
+  .btn-inicio {
+    width: 140px;
+    gap: 5px;
+  }
 }

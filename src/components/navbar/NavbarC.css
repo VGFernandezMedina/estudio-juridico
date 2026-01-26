@@ -1,9 +1,12 @@
 .navbar {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
-  height: 12vh;
-  border-bottom: 1px solid var(--gray-600);
-  z-index: 1;
+  z-index: 1000;
+  min-height: 12vh;
+}
+
+.navbar-collapse {
+  padding: 0 !important;
 }
 
 .custom-toggler-icon {
@@ -107,11 +110,12 @@
 } */
 
 @media (max-width: 991.98px) {
+  .navbar {
+    border-bottom: 1px solid var(--gray-500);
+  }
   .navbar-collapse {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding-top: 20px;
   }
   .logo-nav {
     padding-left: 0px;
@@ -119,7 +123,7 @@
   }
   .nav-right {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     width: 100%;
     padding-left: 10px !important;
   }

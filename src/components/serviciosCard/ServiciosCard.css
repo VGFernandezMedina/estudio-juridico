@@ -26,7 +26,6 @@
   font-weight: 500 !important;
   font-size: 18px !important;
   color: var(--gray-50) !important;
-  transition: color 0.3s ease;
 }
 
 .description-card {
@@ -47,4 +46,76 @@
 .card-servicios:hover .etiqueta-servicios,
 .title-card {
   color: var(--secundario-10) !important;
+}
+
+@media (max-width: 576px) {
+  .body-card {
+    padding: 5px !important;
+  }
+  .title-card {
+    font-weight: 400 !important;
+    font-size: 12px !important;
+  }
+  .description-card {
+    font-weight: 300;
+    font-size: 10px;
+  }
+  .etiqueta-servicios {
+    font-weight: 300 !important;
+    font-size: 8px !important;
+  }
+
+  .card-servicios:hover {
+    box-shadow: initial;
+    transform: initial;
+  }
+  .card-servicios:hover .etiqueta-servicios,
+  .title-card {
+    color: initial;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .body-card {
+    padding: 10px !important;
+  }
+  .title-card {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+  }
+  .description-card {
+    font-weight: 300;
+    font-size: 12px;
+  }
+  .etiqueta-servicios {
+    font-weight: 300 !important;
+    font-size: 10px !important;
+  }
+
+  .card-servicios:hover {
+    box-shadow: initial;
+    transform: initial;
+  }
+  .card-servicios:hover .etiqueta-servicios,
+  .title-card {
+    color: initial;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .body-card {
+    padding: 14px !important;
+  }
+  .title-card {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+  }
+  .description-card {
+    font-weight: 300;
+    font-size: 12px;
+  }
+  .etiqueta-servicios {
+    font-weight: 400 !important;
+    font-size: 10px !important;
+  }
 }

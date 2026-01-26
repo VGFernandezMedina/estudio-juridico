@@ -59,11 +59,15 @@
 }
 
 @media (min-width: 425px) and (max-width: 992px) {
+  .row-servicios {
+    padding: 0 0;
+  }
   .card-servicios {
     max-width: 300px;
   }
 
   .encabezado {
+    padding: 7% 0%;
     h2 {
       font-size: 36px;
     }

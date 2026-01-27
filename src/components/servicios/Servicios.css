@@ -11,9 +11,10 @@
   color: var(--gray-50);
   text-align: center;
   max-width: 800px;
-  padding: 3% 0%;
+  padding: 5% 0%;
   div {
     gap: 5px;
+    color: var(--secundario-20);
   }
   h2 {
     font-size: 48px;

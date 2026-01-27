@@ -10,8 +10,8 @@ const HomePage = () => {
     <>
       <Container fluid className="home g-0">
         <Inicio />
-        <Contador />
         <Servicios />
+        <Contador />
         <Contacto />
       </Container>
     </>

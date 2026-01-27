@@ -1,9 +1,15 @@
-import { Container } from "react-bootstrap";
 import "./Contador.css";
-import CountUp from "react-countup";
+import { Container } from "react-bootstrap";
 import { PiScales } from "react-icons/pi";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 const Contador = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
     <Container fluid className="contador-container">
       <section className="encabezado">
@@ -18,29 +24,21 @@ const Contador = () => {
         </p>
       </section>
 
-      <section className="contador">
+      <section className="contador" ref={ref}>
         <div>
-          <h2>
-            <CountUp end={30} />+
-          </h2>
+          <h2>{inView && <CountUp end={30} duration={2.5} />}+</h2>
           <p>Años de experiencia</p>
         </div>
         <div>
-          <h2>
-            <CountUp end={180} />+
-          </h2>
+          <h2>{inView && <CountUp end={250} duration={2.5} />}+</h2>
           <p>Casos exitosos</p>
         </div>
         <div>
-          <h2>
-            <CountUp end={230} />+
-          </h2>
+          <h2>{inView && <CountUp end={300} duration={2.5} />}+</h2>
           <p>Clientes atendidos</p>
         </div>
         <div>
-          <h2>
-            <CountUp end={98} />%
-          </h2>
+          <h2>{inView && <CountUp end={98} duration={2.5} />}%</h2>
           <p>Satisfacción de los clientes</p>
         </div>
       </section>

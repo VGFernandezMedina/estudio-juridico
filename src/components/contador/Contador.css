@@ -43,6 +43,7 @@
   h2 {
     font-size: 64px;
     font-weight: 500;
+    min-width: 170px;
   }
   p {
     font-size: 18px;
@@ -56,6 +57,7 @@
     h2 {
       font-size: 22px;
       font-weight: 300;
+      min-width: 50px;
     }
     p {
       font-size: 10px;
@@ -71,6 +73,7 @@
     h2 {
       font-size: 34px;
       font-weight: 400;
+      min-width: 90px;
     }
     p {
       font-size: 14px;

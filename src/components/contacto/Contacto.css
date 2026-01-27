@@ -29,10 +29,10 @@
   height: 100px;
   display: flex;
   align-items: center;
-  padding: 25px;
+  padding: 15px;
   margin-bottom: 20px;
   border-radius: 5px;
-  background-color: var(--primario-60);
+  /* background-color: var(--primario-70); */
   color: white;
 }
 
@@ -43,11 +43,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: var(--primario-50);
+  background-color: var(--primario-60);
 }
 
 .icon {
-  font-size: 26px;
+  font-size: 30px;
 }
 
 .datos-contacto {
@@ -60,8 +60,9 @@
   }
   strong {
     font-size: 18px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
     color: var(--secundario-10);
-    font-family: "PT Serif", serif;
   }
 }
 
@@ -92,7 +93,7 @@
     font-size: 24px;
   }
   button {
-    background-color: #1a799d;
+    background-color: var(--primario-30);
     border: none;
   }
   button:hover {
@@ -140,7 +141,7 @@
   }
   .item-contacto {
     height: 70px;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
   }
   .datos-contacto {
@@ -186,7 +187,7 @@
   }
   .item-contacto {
     height: 70px;
-    padding: 10px;
+    padding: 8px;
     margin-bottom: 10px;
   }
   .datos-contacto {

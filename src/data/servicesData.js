@@ -33,7 +33,7 @@ const servicios = [
   },
   {
     id: 5,
-    img: "/public/daño-y-prejuicio.jpg",
+    img: "/daño-y-prejuicio.jpg",
     titulo: "Daño y prejuicio",
     descripcion:
       "Reclamos por daños sufridos, orientados a obtener una reparación económica justa y adecuada.",

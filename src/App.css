@@ -5,3 +5,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .bg-homepage {
+    background-attachment: fixed;
+  }
+}

@@ -9,12 +9,7 @@ import {
   ToastContainer,
 } from "react-bootstrap";
 import "./Contacto.css";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 import { IoIosTimer } from "react-icons/io";
 import { PiScales } from "react-icons/pi";
@@ -44,12 +39,6 @@ const Contacto = () => {
     const correoLimpio = correo.trim().toLowerCase();
     const asuntoLimpio = asunto.trim();
     const mensajeLimpio = mensaje.trim();
-
-    /* if (!nombreLimpio || !telefonoLimpio || !correoLimpio || !mensajeLimpio) {
-      setEstado("null");
-      setTimeout(() => setEstado("error"), 0);
-      return;
-    } */
 
     if (enviando) {
       setEstado("error");
@@ -182,7 +171,12 @@ const Contacto = () => {
 
         <Row className="row-contacto position-relative">
           <Col sm="12" md="5" lg="5" className="col-contacto g-0">
-            <div className="item-contacto">
+            <a
+              className="item-contacto"
+              href="https://wa.me/5493815562900?text=Hola,%20quiero%20hacer%20una%20consulta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="icono-contacto">
                 <FaWhatsapp className="icon" />
               </div>
@@ -190,8 +184,14 @@ const Contacto = () => {
                 <strong className="">WhatsApp:</strong>
                 <p className="">+54 9 3815 56-2900</p>
               </div>
-            </div>
-            <div className="item-contacto">
+            </a>
+
+            <a
+              className="item-contacto"
+              href="mailto:silvia.mercedes.medina@gmail.com?subject=Consulta&body=Hola,%0D%0A%0D%0AQuería hacer una consulta."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="icono-contacto">
                 <TfiEmail className="icon" />
               </div>
@@ -199,7 +199,8 @@ const Contacto = () => {
                 <strong className="">Email:</strong>
                 <p className="">silvia.mercedes.medina@gmail.com</p>
               </div>
-            </div>
+            </a>
+
             <div className="item-contacto">
               <div className="icono-contacto">
                 <IoIosTimer className="icon" />
@@ -209,17 +210,6 @@ const Contacto = () => {
                 <p>Lunes a Viernes: 8:00 a 12:00 y 16:00 a 21:00</p>
               </div>
             </div>
-            {/*         <div className="item-contacto bg-transparent d-flex justify-content-evenly">
-            <div className="icono-contacto">
-              <FaFacebookF size={24} />
-            </div>
-            <div className="icono-contacto">
-              <FaInstagram size={24} />
-            </div>
-            <div className="icono-contacto">
-              <FaLinkedin size={24} />
-            </div>
-          </div> */}
           </Col>
           <Col sm="12" md="7" lg="7" className="col-formulario g-0">
             <div className="form-contacto">
@@ -319,7 +309,8 @@ const Contacto = () => {
                   <Form.Control
                     className="form-control"
                     as="textarea"
-                    rows={4}
+                    rows={5}
+                    placeholder="Hola, me gustaría hacer una consulta..."
                     value={mensaje}
                     onChange={(e) => {
                       setMensaje(e.target.value);

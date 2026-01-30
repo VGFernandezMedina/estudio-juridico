@@ -99,10 +99,11 @@
   button:hover {
     background-color: var(--primario-20);
   }
-  .btn-primary:active,
+  .btn-primary:active {
+    background-color: var(--primario-10) !important;
+  }
   .btn-primary:focus,
   .btn-primary:focus-visible {
-    background-color: var(--primario-10) !important;
     box-shadow: none !important;
   }
   .btn-primary:disabled,

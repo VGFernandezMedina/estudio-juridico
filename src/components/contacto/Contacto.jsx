@@ -1,4 +1,13 @@
-import { Button, Col, Container, Form, Row, Spinner } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  Row,
+  Spinner,
+  Toast,
+  ToastContainer,
+} from "react-bootstrap";
 import "./Contacto.css";
 import {
   FaFacebookF,
@@ -22,6 +31,8 @@ const Contacto = () => {
   const [estado, setEstado] = useState(null);
   const [empresa, setEmpresa] = useState(""); // bots
   const [ultimoEnvio, setUltimoEnvio] = useState(null);
+  const [mostrarToast, setMostrarToast] = useState(false);
+  const [errores, setErrores] = useState({});
 
   const MAX_MENSAJE = 300;
 
@@ -30,17 +41,74 @@ const Contacto = () => {
 
     const nombreLimpio = nombre.trim();
     const telefonoLimpio = telefono.trim();
-    const correoLimpio = correo.trim();
+    const correoLimpio = correo.trim().toLowerCase();
     const asuntoLimpio = asunto.trim();
     const mensajeLimpio = mensaje.trim();
 
-    if (!nombreLimpio || !telefonoLimpio || !correoLimpio || !mensajeLimpio) {
+    /* if (!nombreLimpio || !telefonoLimpio || !correoLimpio || !mensajeLimpio) {
+      setEstado("null");
+      setTimeout(() => setEstado("error"), 0);
+      return;
+    } */
+
+    if (enviando) {
       setEstado("error");
+      setEnviando(false);
       return;
     }
 
-    if (enviando) return;
+    const nuevosErrores = {};
 
+    if (!nombreLimpio) {
+      nuevosErrores.nombre = "El nombre es obligatorio";
+    } else if (nombreLimpio.length < 3 || nombreLimpio.length > 40) {
+      nuevosErrores.nombre = "El nombre debe tener entre 3 y 40 caracteres";
+    } else if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(nombreLimpio)) {
+      nuevosErrores.nombre = "El nombre solo puede contener letras y espacios";
+    }
+
+    if (!telefonoLimpio) {
+      nuevosErrores.telefono = "El teléfono es obligatorio";
+    } else if (!/^\+?[0-9 ]+$/.test(telefonoLimpio)) {
+      nuevosErrores.telefono = "Solo números, espacios y + al inicio";
+    } else if (!/[0-9]/.test(telefonoLimpio)) {
+      nuevosErrores.telefono = "Debe contener al menos un número";
+    } else if (telefonoLimpio.length < 7 || telefonoLimpio.length > 15) {
+      nuevosErrores.telefono = "Debe tener entre 7 y 15 caracteres";
+    }
+
+    if (!correoLimpio) {
+      nuevosErrores.correo = "El correo es obligatorio";
+    } else if (correoLimpio.length < 5 || correoLimpio.length > 80) {
+      nuevosErrores.correo = "El correo tiene una longitud inválida";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correoLimpio)) {
+      nuevosErrores.correo = "Formato de correo inválido";
+    }
+
+    if (!asuntoLimpio) {
+      nuevosErrores.asunto = "El asunto es obligatorio";
+    } else if (asuntoLimpio.length < 4 || asuntoLimpio.length > 60) {
+      nuevosErrores.asunto = "El asunto debe tener entre 4 y 60 caracteres";
+    } else if (!/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/.test(asuntoLimpio)) {
+      nuevosErrores.asunto = "El asunto debe contener al menos una letra";
+    }
+
+    if (!mensajeLimpio) {
+      nuevosErrores.mensaje = "El mensaje es obligatorio";
+    } else if (mensajeLimpio.length < 10) {
+      nuevosErrores.mensaje = "El mensaje debe tener entre 10 y 300 caracteres";
+    } else if (!/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/.test(mensajeLimpio)) {
+      nuevosErrores.mensaje = "El mensaje debe contener al menos una letra";
+    }
+
+    if (Object.keys(nuevosErrores).length > 0) {
+      setErrores(nuevosErrores);
+      setEstado("null");
+      setTimeout(() => setEstado("error"), 0);
+      return;
+    }
+
+    setErrores({});
     setEstado(null);
     setEnviando(true);
 
@@ -88,8 +156,10 @@ const Contacto = () => {
 
   useEffect(() => {
     if (estado) {
+      setMostrarToast(true);
+
       const timer = setTimeout(() => {
-        setEstado(null);
+        setMostrarToast(false);
       }, 3000);
 
       return () => clearTimeout(timer);
@@ -97,46 +167,49 @@ const Contacto = () => {
   }, [estado]);
 
   return (
-    <Container fluid className="contacto pb-5">
-      <section className="encabezado">
-        <div className="d-flex justify-content-center align-items-center mb-3">
-          <PiScales size={20} />
-          <span>Contacto</span>
-        </div>
-        <h2>Acompañamiento legal claro, humano y profesional.</h2>
-        <p>Defiendo tus derechos con compromiso, cercanía y responsabilidad.</p>
-      </section>
+    <>
+      <Container fluid className="contacto pb-5">
+        <section className="encabezado">
+          <div className="d-flex justify-content-center align-items-center mb-3">
+            <PiScales size={20} />
+            <span>Contacto</span>
+          </div>
+          <h2>Acompañamiento legal claro, humano y profesional.</h2>
+          <p>
+            Defiendo tus derechos con compromiso, cercanía y responsabilidad.
+          </p>
+        </section>
 
-      <Row className="row-contacto">
-        <Col sm="12" md="5" lg="5" className="col-contacto g-0">
-          <div className="item-contacto">
-            <div className="icono-contacto">
-              <FaWhatsapp className="icon" />
+        <Row className="row-contacto position-relative">
+          <Col sm="12" md="5" lg="5" className="col-contacto g-0">
+            <div className="item-contacto">
+              <div className="icono-contacto">
+                <FaWhatsapp className="icon" />
+              </div>
+              <div className="datos-contacto ">
+                <strong className="">WhatsApp:</strong>
+                <p className="">+54 9 3815 56-2900</p>
+              </div>
             </div>
-            <div className="datos-contacto ">
-              <strong className="">WhatsApp:</strong>
-              <p className="">+54 9 3815 56-2900</p>
+            <div className="item-contacto">
+              <div className="icono-contacto">
+                <TfiEmail className="icon" />
+              </div>
+              <div className="datos-contacto ">
+                <strong className="">Email:</strong>
+                <p className="">silvia.mercedes.medina@gmail.com</p>
+              </div>
             </div>
-          </div>
-          <div className="item-contacto">
-            <div className="icono-contacto">
-              <TfiEmail className="icon" />
+            <div className="item-contacto">
+              <div className="icono-contacto">
+                <IoIosTimer className="icon" />
+              </div>
+              <div className="datos-contacto ">
+                <strong>Disponibilidad:</strong>
+                <p>Lunes a Viernes: 8:00 a 12:00 y 16:00 a 21:00</p>
+              </div>
             </div>
-            <div className="datos-contacto ">
-              <strong className="">Email:</strong>
-              <p className="">silvia.mercedes.medina@gmail.com</p>
-            </div>
-          </div>
-          <div className="item-contacto">
-            <div className="icono-contacto">
-              <IoIosTimer className="icon" />
-            </div>
-            <div className="datos-contacto ">
-              <strong>Disponibilidad:</strong>
-              <p>Lunes a Viernes: 8:00 a 12:00 y 16:00 a 21:00</p>
-            </div>
-          </div>
-          {/*         <div className="item-contacto bg-transparent d-flex justify-content-evenly">
+            {/*         <div className="item-contacto bg-transparent d-flex justify-content-evenly">
             <div className="icono-contacto">
               <FaFacebookF size={24} />
             </div>
@@ -147,138 +220,176 @@ const Contacto = () => {
               <FaLinkedin size={24} />
             </div>
           </div> */}
-        </Col>
-        <Col sm="12" md="7" lg="7" className="col-formulario g-0">
-          <div className="form-contacto">
-            <Form onSubmit={handleSubmit} className="form py-4">
-              <h3 className="pb-4">Formulario de contacto</h3>
-              <div style={{ display: "none" }}>
-                <Form.Control
-                  type="text"
-                  name="empresa"
-                  value={empresa}
-                  onChange={(e) => setEmpresa(e.target.value)}
-                  autoComplete="off"
-                />
-              </div>
-              <Form.Group className="mb-3" controlId="formNombre">
-                <Form.Label className="form-label">Nombre</Form.Label>
-                <Form.Control
-                  className="form-control"
-                  type="text"
-                  placeholder="Tu nombre"
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
-                  minLength={3}
-                  maxLength={40}
-                  required
-                />
-              </Form.Group>
+          </Col>
+          <Col sm="12" md="7" lg="7" className="col-formulario g-0">
+            <div className="form-contacto">
+              <Form noValidate onSubmit={handleSubmit} className="form py-4">
+                <h3 className="pb-4">Formulario de contacto</h3>
+                <div style={{ display: "none" }}>
+                  <Form.Control
+                    type="text"
+                    name="empresa"
+                    value={empresa}
+                    onChange={(e) => setEmpresa(e.target.value)}
+                    autoComplete="off"
+                  />
+                </div>
+                <Form.Group className="mb-3" controlId="formNombre">
+                  <Form.Label className="form-label">Nombre</Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="text"
+                    placeholder="Tu nombre"
+                    value={nombre}
+                    onChange={(e) => {
+                      setNombre(e.target.value);
+                      setErrores((prev) => ({ ...prev, nombre: null }));
+                    }}
+                    isInvalid={!!errores.nombre}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errores.nombre}
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formTelefono">
-                <Form.Label className="form-label">Teléfono</Form.Label>
-                <Form.Control
-                  className="form-control"
-                  type="tel"
-                  placeholder="Ej: +54 9 381..."
-                  value={telefono}
-                  onChange={(e) => setTelefono(e.target.value)}
-                  inputMode="numeric"
-                  minLength={8}
-                  maxLength={15}
-                  pattern="[0-9+ ]{8,15}"
-                  required
-                />
-              </Form.Group>
+                <Form.Group className="mb-3" controlId="formTelefono">
+                  <Form.Label className="form-label">Teléfono</Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="tel"
+                    placeholder="Ej: +54 9 381..."
+                    value={telefono}
+                    onChange={(e) => {
+                      setTelefono(e.target.value);
+                      setErrores((prev) => ({ ...prev, telefono: null }));
+                    }}
+                    inputMode="numeric"
+                    isInvalid={!!errores.telefono}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errores.telefono}
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label className="form-label">Correo</Form.Label>
-                <Form.Control
-                  className="form-control"
-                  type="email"
-                  placeholder="tucorreo@gmail.com"
-                  value={correo}
-                  onChange={(e) => setCorreo(e.target.value)}
-                  required
-                />
-              </Form.Group>
+                <Form.Group className="mb-3" controlId="formEmail">
+                  <Form.Label className="form-label">Correo</Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="email"
+                    placeholder="tucorreo@gmail.com"
+                    value={correo}
+                    onChange={(e) => {
+                      setCorreo(e.target.value);
+                      setErrores((prev) => ({ ...prev, correo: null }));
+                    }}
+                    isInvalid={!!errores.correo}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errores.correo}
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formAsunto">
-                <Form.Label className="form-label">Asunto</Form.Label>
-                <Form.Control
-                  className="form-control"
-                  type="text"
-                  placeholder="Motivo de la consulta"
-                  value={asunto}
-                  onChange={(e) => setAsunto(e.target.value)}
-                  minLength={3}
-                  maxLength={60}
-                  required
-                />
-              </Form.Group>
+                <Form.Group className="mb-3" controlId="formAsunto">
+                  <Form.Label className="form-label">Asunto</Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="text"
+                    placeholder="Motivo de la consulta"
+                    value={asunto}
+                    onChange={(e) => {
+                      setAsunto(e.target.value);
+                      setErrores((prev) => ({ ...prev, asunto: null }));
+                    }}
+                    isInvalid={!!errores.asunto}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errores.asunto}
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-              <Form.Group
-                className="mb-3 position-relative"
-                controlId="formTexto"
-              >
-                <Form.Label className="form-label">Mensaje</Form.Label>
-                <Form.Control
-                  className="form-control"
-                  as="textarea"
-                  rows={4}
-                  value={mensaje}
-                  onChange={(e) => setMensaje(e.target.value)}
-                  minLength={10}
-                  maxLength={MAX_MENSAJE}
-                  required
-                />
-
-                <small
-                  className={`contador-caracteres ${
-                    MAX_MENSAJE - mensaje.length <= 20 ? "text-danger" : ""
-                  }`}
+                <Form.Group
+                  className="mb-3 position-relative"
+                  controlId="formTexto"
                 >
-                  {MAX_MENSAJE - mensaje.length} / 300
-                </small>
-              </Form.Group>
-              <div className="d-flex justify-content-center">
-                <Button type="submit" variant="primary" disabled={enviando}>
-                  {enviando ? (
-                    <>
-                      <Spinner
-                        as="span"
-                        animation="border"
-                        size="sm"
-                        role="status"
-                        aria-hidden="true"
-                        className="me-2"
-                      />
-                      Enviando...
-                    </>
-                  ) : (
-                    "Enviar mensaje"
-                  )}
-                </Button>
-              </div>
+                  <Form.Label className="form-label">Mensaje</Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    as="textarea"
+                    rows={4}
+                    value={mensaje}
+                    onChange={(e) => {
+                      setMensaje(e.target.value);
+                      setErrores((prev) => ({ ...prev, mensaje: null }));
+                    }}
+                    isInvalid={!!errores.mensaje}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errores.mensaje}
+                  </Form.Control.Feedback>
 
-              <div className="estado-mensaje text-center mt-3">
-                {estado === "ok" && (
-                  <p className="text-success mb-0">
-                    Mensaje enviado correctamente
-                  </p>
-                )}
+                  <small
+                    className={`contador-caracteres ${
+                      MAX_MENSAJE - mensaje.length <= 20 ? "text-danger" : ""
+                    }`}
+                  >
+                    {MAX_MENSAJE - mensaje.length} / 300
+                  </small>
+                </Form.Group>
+                <div className="d-flex justify-content-center">
+                  <Button type="submit" variant="primary" disabled={enviando}>
+                    {enviando ? (
+                      <>
+                        <Spinner
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                          className="me-2"
+                        />
+                        Enviando...
+                      </>
+                    ) : (
+                      "Enviar mensaje"
+                    )}
+                  </Button>
+                </div>
+              </Form>
+            </div>
+          </Col>
+          <ToastContainer
+            position="bottom-end"
+            className="p-3 position-absolute"
+          >
+            <Toast
+              bg={estado === "ok" ? "success" : "danger"}
+              show={mostrarToast}
+              onClose={() => {
+                setMostrarToast(false);
+                setEstado(null);
+              }}
+            >
+              {/* <Toast.Header closeButton>
+              <strong className="me-auto">
+                {estado === "ok" ? "Mensaje enviado" : "Error"}
+              </strong>
+            </Toast.Header> */}
 
-                {estado === "error" && (
-                  <p className="text-danger mb-0">
-                    Error al enviar el mensaje. Intente nuevamente.
-                  </p>
-                )}
-              </div>
-            </Form>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+              <Toast.Body className="text-white">
+                {estado === "ok"
+                  ? "Tu mensaje fue enviado correctamente."
+                  : "No se pudo enviar el mensaje. Intente nuevamente."}
+              </Toast.Body>
+            </Toast>
+          </ToastContainer>
+        </Row>
+      </Container>
+    </>
   );
 };
 

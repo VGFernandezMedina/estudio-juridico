@@ -28,7 +28,7 @@ const NavbarC = () => {
           <Nav className="nav-right">
             <Nav.Link href="#">Inicio</Nav.Link>
             <Nav.Link href="#">Servicios</Nav.Link>
-            <Nav.Link href="#">Experiencia</Nav.Link>
+            {/* <Nav.Link href="#">Experiencia</Nav.Link> */}
             <Nav.Link href="#">Contacto</Nav.Link>
           </Nav>
           {/* <Nav className="nav-right">

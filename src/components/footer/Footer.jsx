@@ -4,7 +4,7 @@ import logo from "/logo.png";
 import {
   FaFacebookF,
   FaInstagram,
-  FaLinkedin,
+  /* FaLinkedin, */
   FaWhatsapp,
 } from "react-icons/fa";
 
@@ -36,25 +36,37 @@ const Footer = () => {
             <h5 className="text-center">Redes sociales</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/5493815562900?text=Hola,%20quiero%20hacer%20una%20consulta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaWhatsapp className="icon-footer" />
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.facebook.com/silvia.medina.181667"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaFacebookF className="icon-footer" />
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.instagram.com/silvia.mercedes.medina/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaInstagram className="icon-footer" />
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin className="icon-footer" />
                 </a>
-              </li>
+              </li> */}
             </ul>
           </Col>
         </Row>

@@ -1,13 +1,13 @@
 .inicio {
   width: 100%;
-  height: 90vh;
+  min-height: calc(100vh - 80px);
   font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10vh;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
+  padding-bottom: 60px;
 }
 
 .contenedor {
@@ -47,9 +47,20 @@
 }
 
 .btn-inicio:hover {
-  background-color: var(--primario-10) !important;
   border: 1px solid var(--gray-50) !important;
-  gap: 15px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-inicio:hover {
+    background-color: var(--primario-10) !important;
+    gap: 15px;
+  }
+}
+
+@media (hover: none) {
+  .inicio {
+    min-height: calc(100vh - 70px);
+  }
 }
 
 @media (max-width: 425px) {

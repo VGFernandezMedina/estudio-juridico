@@ -2,6 +2,7 @@ import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import "./NavbarC.css";
 import logo from "/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { HashLink } from "react-router-hash-link";
 
 const NavbarC = () => {
   return (
@@ -20,9 +21,15 @@ const NavbarC = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="nav-right">
-            <Nav.Link>Inicio</Nav.Link>
-            <Nav.Link>Servicios</Nav.Link>
-            <Nav.Link>Contacto</Nav.Link>
+            <Nav.Link as={HashLink} smooth to="/#inicio">
+              Inicio
+            </Nav.Link>
+            <Nav.Link as={HashLink} smooth to="/#servicios">
+              Servicios
+            </Nav.Link>
+            <Nav.Link as={HashLink} smooth to="/#contacto">
+              Contacto
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

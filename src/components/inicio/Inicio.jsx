@@ -5,7 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const Inicio = () => {
   return (
     <Container fluid id="inicio" className="inicio g-0">
-      <div className="contenedor">
+      <div data-aos="fade-up" className="contenedor">
         <div className="titulos">
           <h3>Abogada</h3>
           <h1>Silvia Mercedes Medina</h1>

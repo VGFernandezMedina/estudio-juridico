@@ -7,7 +7,7 @@ const NavbarC = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container fluid>
-        <Nav.Link href="#">
+        <Nav.Link href="/">
           <Image fluid className="logo-nav" src={logo} alt="logo" />
         </Nav.Link>
         <Navbar.Toggle
@@ -20,9 +20,9 @@ const NavbarC = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="nav-right">
-            <Nav.Link href="#">Inicio</Nav.Link>
-            <Nav.Link href="#">Servicios</Nav.Link>
-            <Nav.Link href="#">Contacto</Nav.Link>
+            <Nav.Link>Inicio</Nav.Link>
+            <Nav.Link>Servicios</Nav.Link>
+            <Nav.Link>Contacto</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -164,7 +164,7 @@ const Contacto = () => {
   return (
     <>
       <Container fluid className="contacto pb-5">
-        <section className="encabezado">
+        <section id="contacto" className="encabezado">
           <div className="d-flex justify-content-center align-items-center mb-3">
             <PiScales size={20} />
             <span>Contacto</span>

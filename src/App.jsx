@@ -10,10 +10,10 @@ import "aos/dist/aos.css";
 const App = () => {
   useEffect(() => {
     Aos.init({
-      duration: 800, // duración de la animación
+      duration: 800,
       easing: "ease-out",
-      once: true, // se anima solo la primera vez
-      offset: 120, // antes de entrar en pantalla
+      once: true,
+      offset: 200,
     });
   }, []);
 

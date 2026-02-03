@@ -10,7 +10,7 @@ const Inicio = () => {
           <h3>Abogada</h3>
           <h1>Silvia Mercedes Medina</h1>
         </div>
-        <Button className="btn-inicio">
+        <Button href="/#contacto" className="btn-inicio">
           Contacto
           <IoIosArrowForward />
         </Button>

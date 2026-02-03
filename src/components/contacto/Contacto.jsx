@@ -178,6 +178,8 @@ const Contacto = () => {
         <Row className="row-contacto position-relative">
           <Col sm="12" md="5" lg="5" className="col-contacto g-0">
             <a
+              data-aos="fade-right"
+              data-aos-duration="800"
               className="item-contacto"
               href="https://wa.me/5493815562900?text=Hola,%20quiero%20hacer%20una%20consulta"
               target="_blank"
@@ -193,6 +195,8 @@ const Contacto = () => {
             </a>
 
             <a
+              data-aos="fade-right"
+              data-aos-duration="600"
               className="item-contacto"
               href="mailto:silvia.mercedes.medina@gmail.com?subject=Consulta&body=Hola,%0D%0A%0D%0AQuería hacer una consulta."
               target="_blank"
@@ -207,7 +211,11 @@ const Contacto = () => {
               </div>
             </a>
 
-            <div className="item-contacto">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="400"
+              className="item-contacto"
+            >
               <div className="icono-contacto">
                 <IoIosTimer className="icon" />
               </div>
@@ -218,7 +226,7 @@ const Contacto = () => {
             </div>
           </Col>
           <Col sm="12" md="7" lg="7" className="col-formulario g-0">
-            <div className="form-contacto">
+            <div data-aos="fade-left" className="form-contacto">
               <Form noValidate onSubmit={handleSubmit} className="form py-4">
                 <h3 className="pb-4">Formulario de contacto</h3>
                 <div style={{ display: "none" }}>

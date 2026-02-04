@@ -13,7 +13,9 @@ const ServiciosCard = ({ img, titulo, descripcion, etiqueta }) => {
       className="pb-4 col-servicios"
     >
       <Card className="h-100 card-servicios rounded-2">
-        <Card.Img className="img-card" variant="top" src={img} />
+        <div className="img-wrapper">
+          <Card.Img className="img-card" variant="top" src={img} />
+        </div>
         <Card.Body className="body-card d-flex flex-column" src={img}>
           <Card.Title className="title-card">{titulo}</Card.Title>
           <Card.Text className="description-card">{descripcion}</Card.Text>

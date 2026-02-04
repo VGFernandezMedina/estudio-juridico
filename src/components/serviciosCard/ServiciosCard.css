@@ -12,14 +12,29 @@
   transition: all 0.5s ease;
 }
 
-/* .card-servicios:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
-  transform: translateY(-5px);
-} */
-
 .body-card {
   background-color: var(--primario-40);
   padding: 20px !important;
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.img-wrapper img {
+  width: 100%;
+  display: block;
+}
+.img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.card-servicios:hover .img-wrapper::before {
+  opacity: 0;
 }
 
 .title-card {

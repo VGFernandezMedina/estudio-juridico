@@ -182,6 +182,7 @@ const Contacto = () => {
             md="5"
             lg="5"
             data-aos="fade-right"
+            data-aos-duration="2000"
             className="col-contacto g-0"
           >
             <a
@@ -227,7 +228,11 @@ const Contacto = () => {
             </div>
           </Col>
           <Col sm="12" md="7" lg="7" className="col-formulario g-0">
-            <div data-aos="fade-left" className="form-contacto">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              className="form-contacto"
+            >
               <Form noValidate onSubmit={handleSubmit} className="form py-4">
                 <h3 className="pb-4">Formulario de contacto</h3>
                 <div style={{ display: "none" }}>

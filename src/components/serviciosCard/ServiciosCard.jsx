@@ -9,6 +9,7 @@ const ServiciosCard = ({ img, titulo, descripcion, etiqueta }) => {
       md="4"
       lg="4"
       data-aos="zoom-in"
+      data-aos-duration="1000"
       className="pb-4 col-servicios"
     >
       <Card className="h-100 card-servicios rounded-2">

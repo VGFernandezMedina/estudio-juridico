@@ -20,6 +20,7 @@
     font-size: 20px;
     font-family: "PT Serif", serif;
     padding-bottom: 4%;
+    color: var(--color-secundario);
   }
   li {
     display: flex;
@@ -41,6 +42,7 @@
     font-size: 20px;
     font-family: "PT Serif", serif;
     padding-bottom: 4%;
+    color: var(--color-secundario);
   }
   ul {
     display: flex;

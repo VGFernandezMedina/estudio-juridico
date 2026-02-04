@@ -5,14 +5,14 @@ const servicios = [
     titulo: "Sucesiones",
     descripcion:
       "Asesoramiento y acompañamiento legal en procesos sucesorios, desde la apertura hasta la adjudicación de bienes a los herederos.",
-    etiqueta: "Derechos de familia",
+    etiqueta: "",
   },
   {
     id: 2,
     img: "/Regimen-de-alimentos.jpg",
     titulo: "Régimen de alimentos",
     descripcion:
-      "Gestión y reclamo de cuotas alimentarias para asegurar el bienestar y las necesidades básicas de hijos y familiares.",
+      "Gestión, reclamo y cesación de cuotas alimentarias para asegurar el bienestar y las necesidades básicas de hijos y familiares.",
     etiqueta: "Derechos de familia",
   },
   {

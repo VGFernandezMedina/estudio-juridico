@@ -7,7 +7,7 @@ import { PiScales } from "react-icons/pi";
 const Servicios = () => {
   return (
     <Container fluid className="servicios pb-5">
-      <section className="encabezado">
+      <section id="servicios" className="encabezado">
         <div className="d-flex justify-content-center align-items-center mb-3">
           <PiScales size={20} />
           <span>Servicios</span>

@@ -14,7 +14,9 @@ const Footer = () => {
       <Container fluid className="footer">
         <Row>
           <Col sm="12" md="4" lg="4" className="col-img-footer">
-            <Image fluid src={logo} className="logo-footer" />
+            <a href="/">
+              <Image fluid src={logo} className="logo-footer" />
+            </a>
           </Col>
 
           <Col sm="12" md="4" lg="4" className="col-center-footer">
@@ -69,6 +71,21 @@ const Footer = () => {
               </li> */}
             </ul>
           </Col>
+          <section className="footer-copy">
+            <span>© 2026 Silvia Mercedes Medina – Estudio Jurídico.</span>
+            <span>
+              Desarrollado por
+              <a
+                href="https://gabrielfm-dev.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-1"
+              >
+                Gabriel
+              </a>
+              .
+            </span>
+          </section>
         </Row>
       </Container>
     </footer>

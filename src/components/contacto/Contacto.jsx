@@ -15,6 +15,7 @@ import { IoIosTimer } from "react-icons/io";
 import { PiScales } from "react-icons/pi";
 import emailjs from "@emailjs/browser";
 import { useEffect, useState } from "react";
+import { IoArrowForwardOutline } from "react-icons/io5";
 
 const Contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -164,7 +165,7 @@ const Contacto = () => {
   return (
     <>
       <Container fluid className="contacto pb-5">
-        <section className="encabezado">
+        <section id="contacto" className="encabezado">
           <div className="d-flex justify-content-center align-items-center mb-3">
             <PiScales size={20} />
             <span>Contacto</span>
@@ -176,7 +177,14 @@ const Contacto = () => {
         </section>
 
         <Row className="row-contacto position-relative">
-          <Col sm="12" md="5" lg="5" className="col-contacto g-0">
+          <Col
+            sm="12"
+            md="5"
+            lg="5"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            className="col-contacto g-0"
+          >
             <a
               className="item-contacto"
               href="https://wa.me/5493815562900?text=Hola,%20quiero%20hacer%20una%20consulta"
@@ -190,6 +198,7 @@ const Contacto = () => {
                 <strong className="">WhatsApp:</strong>
                 <p className="">+54 9 3815 56-2900</p>
               </div>
+              <IoArrowForwardOutline className="arrow-icon" />
             </a>
 
             <a
@@ -205,6 +214,7 @@ const Contacto = () => {
                 <strong className="">Email:</strong>
                 <p className="">silvia.mercedes.medina@gmail.com</p>
               </div>
+              <IoArrowForwardOutline className="arrow-icon" />
             </a>
 
             <div className="item-contacto">
@@ -218,7 +228,11 @@ const Contacto = () => {
             </div>
           </Col>
           <Col sm="12" md="7" lg="7" className="col-formulario g-0">
-            <div className="form-contacto">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              className="form-contacto"
+            >
               <Form noValidate onSubmit={handleSubmit} className="form py-4">
                 <h3 className="pb-4">Formulario de contacto</h3>
                 <div style={{ display: "none" }}>
@@ -371,12 +385,6 @@ const Contacto = () => {
                 setEstado(null);
               }}
             >
-              {/* <Toast.Header closeButton>
-              <strong className="me-auto">
-                {estado === "ok" ? "Mensaje enviado" : "Error"}
-              </strong>
-            </Toast.Header> */}
-
               <Toast.Body className="text-white">
                 {estado === "ok"
                   ? "Tu mensaje fue enviado correctamente."

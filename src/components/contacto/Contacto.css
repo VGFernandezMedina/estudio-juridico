@@ -69,6 +69,12 @@
   }
 }
 
+.arrow-icon {
+  margin-left: auto;
+  font-size: 25px;
+  transition: color 0.6s ease;
+}
+
 .col-formulario {
   display: flex;
   justify-content: center;
@@ -167,7 +173,8 @@
     box-shadow: 0 0 15px var(--primario-50);
   }
 
-  .item-contacto:hover .icon {
+  .item-contacto:hover .icon,
+  .item-contacto:hover .arrow-icon {
     color: var(--secundario-10);
   }
 }
@@ -197,6 +204,9 @@
   }
   .icon {
     font-size: 18px;
+  }
+  .arrow-icon {
+    font-size: 16px;
   }
 
   .form-contacto {

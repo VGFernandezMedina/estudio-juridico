@@ -15,6 +15,7 @@ import { IoIosTimer } from "react-icons/io";
 import { PiScales } from "react-icons/pi";
 import emailjs from "@emailjs/browser";
 import { useEffect, useState } from "react";
+import { IoArrowForwardOutline } from "react-icons/io5";
 
 const Contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -176,10 +177,14 @@ const Contacto = () => {
         </section>
 
         <Row className="row-contacto position-relative">
-          <Col sm="12" md="5" lg="5" className="col-contacto g-0">
+          <Col
+            sm="12"
+            md="5"
+            lg="5"
+            data-aos="fade-right"
+            className="col-contacto g-0"
+          >
             <a
-              data-aos="fade-right"
-              data-aos-duration="800"
               className="item-contacto"
               href="https://wa.me/5493815562900?text=Hola,%20quiero%20hacer%20una%20consulta"
               target="_blank"
@@ -192,11 +197,10 @@ const Contacto = () => {
                 <strong className="">WhatsApp:</strong>
                 <p className="">+54 9 3815 56-2900</p>
               </div>
+              <IoArrowForwardOutline className="arrow-icon" />
             </a>
 
             <a
-              data-aos="fade-right"
-              data-aos-duration="600"
               className="item-contacto"
               href="mailto:silvia.mercedes.medina@gmail.com?subject=Consulta&body=Hola,%0D%0A%0D%0AQuería hacer una consulta."
               target="_blank"
@@ -209,13 +213,10 @@ const Contacto = () => {
                 <strong className="">Email:</strong>
                 <p className="">silvia.mercedes.medina@gmail.com</p>
               </div>
+              <IoArrowForwardOutline className="arrow-icon" />
             </a>
 
-            <div
-              data-aos="fade-right"
-              data-aos-duration="400"
-              className="item-contacto"
-            >
+            <div className="item-contacto">
               <div className="icono-contacto">
                 <IoIosTimer className="icon" />
               </div>
@@ -379,12 +380,6 @@ const Contacto = () => {
                 setEstado(null);
               }}
             >
-              {/* <Toast.Header closeButton>
-              <strong className="me-auto">
-                {estado === "ok" ? "Mensaje enviado" : "Error"}
-              </strong>
-            </Toast.Header> */}
-
               <Toast.Body className="text-white">
                 {estado === "ok"
                   ? "Tu mensaje fue enviado correctamente."

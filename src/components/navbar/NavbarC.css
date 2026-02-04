@@ -72,4 +72,8 @@
     width: 100%;
     padding-left: 10px !important;
   }
+
+  .navbar .nav-right .nav-link {
+    font-size: 16px;
+  }
 }

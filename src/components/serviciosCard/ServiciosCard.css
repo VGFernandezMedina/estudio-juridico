@@ -12,20 +12,35 @@
   transition: all 0.5s ease;
 }
 
-.card-servicios:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
-  transform: translateY(-5px);
-}
-
 .body-card {
   background-color: var(--primario-40);
   padding: 20px !important;
 }
 
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.img-wrapper img {
+  width: 100%;
+  display: block;
+}
+.img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.card-servicios:hover .img-wrapper::before {
+  opacity: 0;
+}
+
 .title-card {
   font-weight: 500 !important;
   font-size: 18px !important;
-  color: var(--gray-50) !important;
+  color: var(--secundario-10) !important;
 }
 
 .description-card {
@@ -43,9 +58,15 @@
   transition: color 0.3s ease;
 }
 
-.card-servicios:hover .etiqueta-servicios,
-.title-card {
-  color: var(--secundario-10) !important;
+@media (hover: hover) {
+  .card-servicios:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
+  }
+
+  .card-servicios:hover .etiqueta-servicios {
+    color: var(--secundario-10) !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -64,15 +85,6 @@
     font-weight: 300 !important;
     font-size: 8px !important;
   }
-
-  .card-servicios:hover {
-    box-shadow: initial;
-    transform: initial;
-  }
-  .card-servicios:hover .etiqueta-servicios,
-  .title-card {
-    color: initial;
-  }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -90,15 +102,6 @@
   .etiqueta-servicios {
     font-weight: 300 !important;
     font-size: 10px !important;
-  }
-
-  .card-servicios:hover {
-    box-shadow: initial;
-    transform: initial;
-  }
-  .card-servicios:hover .etiqueta-servicios,
-  .title-card {
-    color: initial;
   }
 }
 

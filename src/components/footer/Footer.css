@@ -64,6 +64,24 @@
   color: var(--gray-150);
 }
 
+.footer-copy {
+  height: 60px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.6);
+  gap: 2px;
+}
+.footer-copy a {
+  color: inherit;
+  text-decoration: underline;
+}
+.footer-copy a:hover {
+  color: var(--secundario-10);
+}
+
 @media (max-width: 425px) {
   .logo-footer {
     width: 14vh;
@@ -93,6 +111,10 @@
   }
   .icon-footer {
     font-size: 20px;
+  }
+
+  .footer-copy {
+    font-size: 10px;
   }
 }
 

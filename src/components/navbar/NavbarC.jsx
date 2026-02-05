@@ -2,32 +2,56 @@ import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import "./NavbarC.css";
 import logo from "/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 import { HashLink } from "react-router-hash-link";
+import { useState } from "react";
 
 const NavbarC = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar">
+    <Navbar collapseOnSelect expand="lg" className="navbar" expanded={expanded}>
       <Container fluid>
         <Nav.Link href="/">
           <Image fluid className="logo-nav" src={logo} alt="logo" />
         </Nav.Link>
         <Navbar.Toggle
+          onClick={() => setExpanded(!expanded)}
           aria-controls="responsive-navbar-nav"
-          className="nav-toggle"
+          className={`nav-toggle ${expanded ? "open" : ""}`}
         >
           <span className="custom-toggler-icon">
-            <GiHamburgerMenu />
+            {expanded ? (
+              <AiOutlineClose className="icon-navbar" />
+            ) : (
+              <GiHamburgerMenu className="icon-navbar" />
+            )}
           </span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="nav-right">
-            <Nav.Link as={HashLink} smooth to="/#inicio">
+            <Nav.Link
+              as={HashLink}
+              smooth
+              to="/#inicio"
+              onClick={() => setExpanded(false)}
+            >
               Inicio
             </Nav.Link>
-            <Nav.Link as={HashLink} smooth to="/#servicios">
+            <Nav.Link
+              as={HashLink}
+              smooth
+              to="/#servicios"
+              onClick={() => setExpanded(false)}
+            >
               Servicios
             </Nav.Link>
-            <Nav.Link as={HashLink} smooth to="/#contacto">
+            <Nav.Link
+              as={HashLink}
+              smooth
+              to="/#contacto"
+              onClick={() => setExpanded(false)}
+            >
               Contacto
             </Nav.Link>
           </Nav>

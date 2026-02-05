@@ -81,7 +81,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="mx-1"
               >
-                Gabriel
+                Gabriel Fernandez
               </a>
               .
             </span>

@@ -9,7 +9,6 @@ const Inicio = () => {
         <div className="titulos">
           <h3>Abogada</h3>
           <h1>Silvia Mercedes Medina</h1>
-          <p>Especialista en Derecho Civil y de Familia</p>
         </div>
         <Button href="/#contacto" className="btn-inicio">
           Contacto

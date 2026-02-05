@@ -12,7 +12,7 @@ const servicios = [
     img: "/Regimen-de-alimentos.jpg",
     titulo: "Régimen de alimentos",
     descripcion:
-      "Gestión, reclamo y cesación de cuotas alimentarias para asegurar el bienestar y las necesidades básicas de hijos y familiares.",
+      "Gestión y reclamo de cuotas alimentarias para asegurar el bienestar y las necesidades básicas de hijos y familiares. Cesación",
     etiqueta: "Derechos de familia",
   },
   {

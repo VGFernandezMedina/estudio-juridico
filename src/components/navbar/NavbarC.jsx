@@ -2,6 +2,7 @@ import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import "./NavbarC.css";
 import logo from "/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
 
@@ -17,10 +18,14 @@ const NavbarC = () => {
         <Navbar.Toggle
           onClick={() => setExpanded(!expanded)}
           aria-controls="responsive-navbar-nav"
-          className="nav-toggle"
+          className={`nav-toggle ${expanded ? "open" : ""}`}
         >
           <span className="custom-toggler-icon">
-            <GiHamburgerMenu />
+            {expanded ? (
+              <AiOutlineClose className="icon-navbar" />
+            ) : (
+              <GiHamburgerMenu className="icon-navbar" />
+            )}
           </span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">

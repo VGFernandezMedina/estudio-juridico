@@ -6,8 +6,15 @@
 
 .custom-toggler-icon {
   font-size: 28px;
-  color: var(--gray-150);
-  border: none;
+  color: var(--gray-100);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle.open .custom-toggler-icon {
+  transform: rotate(180deg);
 }
 
 .navbar-toggler:focus,

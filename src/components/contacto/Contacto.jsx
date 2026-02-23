@@ -41,11 +41,7 @@ const Contacto = () => {
     const asuntoLimpio = asunto.trim();
     const mensajeLimpio = mensaje.trim();
 
-    if (enviando) {
-      setEstado("error");
-      setEnviando(false);
-      return;
-    }
+    if (enviando) return;
 
     const nuevosErrores = {};
 
@@ -93,8 +89,6 @@ const Contacto = () => {
 
     if (Object.keys(nuevosErrores).length > 0) {
       setErrores(nuevosErrores);
-      setEstado("null");
-      setTimeout(() => setEstado("error"), 0);
       return;
     }
 
@@ -373,27 +367,33 @@ const Contacto = () => {
               </Form>
             </div>
           </Col>
-          <ToastContainer
-            position="bottom-end"
-            className="p-3 position-absolute"
-          >
-            <Toast
-              bg={estado === "ok" ? "success" : "danger"}
-              show={mostrarToast}
-              onClose={() => {
-                setMostrarToast(false);
-                setEstado(null);
-              }}
-            >
-              <Toast.Body className="text-white">
-                {estado === "ok"
-                  ? "Tu mensaje fue enviado correctamente."
-                  : "No se pudo enviar el mensaje. Intente nuevamente."}
-              </Toast.Body>
-            </Toast>
-          </ToastContainer>
         </Row>
       </Container>
+      <ToastContainer
+        position="top-end"
+        className="p-3"
+        style={{
+          position: "fixed",
+          top: "20px",
+          right: "20px",
+          zIndex: 9999,
+        }}
+      >
+        <Toast
+          bg={estado === "ok" ? "success" : "danger"}
+          show={mostrarToast}
+          onClose={() => {
+            setMostrarToast(false);
+            setEstado(null);
+          }}
+        >
+          <Toast.Body className="text-white">
+            {estado === "ok"
+              ? "Tu mensaje fue enviado correctamente."
+              : "No se pudo enviar el mensaje. Intente nuevamente."}
+          </Toast.Body>
+        </Toast>
+      </ToastContainer>
     </>
   );
 };

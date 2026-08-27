@@ -1,6 +1,6 @@
 import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import "./NavbarC.css";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { HashLink } from "react-router-hash-link";

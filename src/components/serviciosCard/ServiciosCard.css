@@ -7,9 +7,10 @@
 .card-servicios {
   border: none !important;
   overflow: hidden;
-  will-change: transform;
+  background-color: var(--primario-40);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-  transition: all 0.5s ease;
+  transform: translateZ(0);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .body-card {
@@ -20,18 +21,17 @@
 .img-wrapper {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background-color: var(--primario-40);
 }
+
 .img-wrapper img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-}
-.img-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
-  transition: opacity 0.4s ease;
-  pointer-events: none;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease;
 }
 
 .title-card {
@@ -57,16 +57,15 @@
 
 @media (hover: hover) {
   .card-servicios:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    transform: translateY(-5px);
+    transform: translate3d(0, -5px, 0);
   }
 
   .card-servicios:hover .etiqueta-servicios {
     color: var(--secundario-10) !important;
   }
 
-  .card-servicios:hover .img-wrapper::before {
-    opacity: 0;
+  .card-servicios:hover .img-wrapper img {
+    filter: brightness(1);
   }
 }
 

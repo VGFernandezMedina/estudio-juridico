@@ -15,7 +15,7 @@ import { IoIosTimer } from "react-icons/io";
 import { PiScales } from "react-icons/pi";
 import emailjs from "@emailjs/browser";
 import { useEffect, useState } from "react";
-import { IoArrowForwardOutline } from "react-icons/io5";
+import { IoArrowForwardOutline, IoLocationOutline } from "react-icons/io5";
 
 const Contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -218,6 +218,16 @@ const Contacto = () => {
               <div className="datos-contacto ">
                 <strong>Disponibilidad:</strong>
                 <p>Lunes a Viernes: 8:00 a 12:00 y 16:00 a 21:00</p>
+              </div>
+            </div>
+
+            <div className="item-contacto">
+              <div className="icono-contacto">
+                <IoLocationOutline className="icon" />
+              </div>
+              <div className="datos-contacto ">
+                <strong>Ubicación:</strong>
+                <p>Tucumán, Argentina</p>
               </div>
             </div>
           </Col>

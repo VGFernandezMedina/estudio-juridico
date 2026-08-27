@@ -1,5 +1,5 @@
 .bg-homepage {
-  background-image: url(/bg-libros.jpg);
+  background-image: url(/bg-libros.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -8,7 +8,7 @@
 
 @media (max-width: 767.98px) {
   .bg-homepage {
-    background-image: url(/bg-libros-mobile.jpg);
+    background-image: url(/bg-libros-mobile.webp);
     background-position: center top;
     background-size: contain;
   }

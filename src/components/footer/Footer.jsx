@@ -1,12 +1,7 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
 import "./Footer.css";
-import logo from "/logo.png";
-import {
-  FaFacebookF,
-  FaInstagram,
-  /* FaLinkedin, */
-  FaWhatsapp,
-} from "react-icons/fa";
+import logo from "/logo.webp";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -64,11 +59,6 @@ const Footer = () => {
                   <FaInstagram className="icon-footer" />
                 </a>
               </li>
-              {/* <li>
-                <a href="" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="icon-footer" />
-                </a>
-              </li> */}
             </ul>
           </Col>
           <section className="footer-copy">

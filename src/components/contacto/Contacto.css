@@ -170,10 +170,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .item-contacto:hover {
-    box-shadow: 0 0 15px var(--primario-50);
-  }
-
   .item-contacto:hover .icon,
   .item-contacto:hover .arrow-icon {
     color: var(--secundario-10);
